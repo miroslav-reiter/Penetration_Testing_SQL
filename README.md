@@ -205,7 +205,7 @@ SELECT * FROM mytable INTO dumpfile '/tmp/somefile'; --  priv, write to file sys
 -- Hostname, IP adresa, číslo portu (najčastejšie 3306-3309)(Hostname, IP Address, port)
 SELECT @@hostname;
 SHOW VARIABLES WHERE Variable_name = 'port'
-SELECT SUBSTRING_INDEX(USER(), '@', -1) AS ip,  @@hostname as hostname, @@port as port, DATABASE() as current_database;
+SELECT SUBSTRING_INDEX(USER(), '@', -1) AS ip, @@hostname as hostname, @@port as port, DATABASE() as current_database;
 mysql> \s
 mysql> status
 ```
