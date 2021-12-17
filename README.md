@@ -83,7 +83,8 @@ SELECT table_schema, table_name, column_name, privilege_type FROM information_sc
 ### Zoznam DBA admin účtov List (DBA Accounts)	
 ```sql
 -- Zoznam DBA admin účtov List (DBA Accounts)	
-SELECT grantee, privilege_type, is_grantable FROM information_schema.user_privileges WHERE privilege_type = 'SUPER'; SELECT host, user FROM mysql.user WHERE Super_priv = 'Y'; # priv
+SELECT grantee, privilege_type, is_grantable FROM information_schema.user_privileges WHERE privilege_type = 'SUPER';   
+SELECT host, user FROM mysql.user WHERE Super_priv = 'Y'; # priv   
 ```
 
 ### Názov aktuálne používanej/pripojenej databázy (Current Database)	
