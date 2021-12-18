@@ -15,7 +15,7 @@ SQLmap
 Hashcat
 ```
 
-## ☁️ Vyhľadávacie dopyty Google/Bing
+## 🕵️‍♂️ Vyhľadávacie dopyty Google/Bing
 ```sql
 -- Vyhľadávacie dopyty Google/Bing
 PHP + MySQL
@@ -25,14 +25,14 @@ asp?id=
 -- SQLzoo hack
 ?answer=1
 ```
-## SQL skripty
-### Verzia DB
+## 💡 SQL skripty
+### 🔎 Verzia DB
 ```sql
 -- Verzia DB (Version DB)	
 SELECT @@version
 ```
 
-### Komentáre (Comments)
+### 📜 Komentáre (Comments)
 ```sql
 -- Komentáre (Comments)	
 SELECT 1; # comment
@@ -114,20 +114,20 @@ SHOW tables;
 SELECT table_schema,table_name FROM information_schema.tables WHERE table_schema != 'mysql' AND table_schema != 'information_schema'
 ```
 
-### Nájdenie tabulky podľa názvu stĺpca (Find Tables From Column Name)	
+### 📈 Nájdenie tabulky podľa názvu stĺpca (Find Tables From Column Name)	
 ```sql
 -- Nájdenie tabulky podľa názvu stĺpca (Find Tables From Column Name)	
 SELECT table_schema, table_name FROM information_schema.columns WHERE column_name = 'username'; -- find table which have a column called 'username'
 ```
 
-### Výber ntého riadku (Select Nth Row)	
+### 🔦 Výber ntého riadku (Select Nth Row)	
 ```sql
 -- Výber ntého riadku (Select Nth Row)	
 SELECT host, user FROM user ORDER BY host LIMIT 1 OFFSET 0; # rows numbered from 0
 SELECT host, user FROM user ORDER BY host LIMIT 1 OFFSET 1; # rows numbered from 0
 ```
 
-### Výber ntého znaku (Select Nth Char)	
+### 🧲 Výber ntého znaku (Select Nth Char)	
 ```sql
 -- Výber ntého znaku (Select Nth Char)	
 SELECT substr('abcd', 3, 1); # returns c
@@ -162,7 +162,7 @@ SELECT CONCAT('A','B'); # returns AB
 SELECT CONCAT('A','B','C'); # returns ABC
 ```
 
-### Riadiaca štruktúra/príkaz IF (IF Statement)	
+### 🧭 Riadiaca štruktúra/príkaz IF (IF Statement)	
 ```sql
 -- Riadiaca štruktúra/príkaz IF (IF Statement)	
 SELECT if(1=1,'foo','bar'); -- returns 'foo’
