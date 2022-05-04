@@ -21,6 +21,7 @@ Hashcat
 PHP + MySQL
 php?id=
 asp?id=
+jsp?id=
 
 -- SQLzoo hack
 ?answer=1
